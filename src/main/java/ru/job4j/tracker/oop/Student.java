@@ -27,8 +27,3 @@ public class Student {
         System.out.println("Do Ci Lya Sol Fa Mi Re Do");
     }
 }
-//1. Добавьте метод public void song() в класс ru.job4j.oop.Student. Этот метод должен выводить на консоль слова "I believe I can fly"
-//
-//2. В методе main попросите Петю три раза сыграть на баяне и три раза спеть.
-//
-//3. Залейте код в репозиторий и переведите ответственного на Петра Арсентьева.
