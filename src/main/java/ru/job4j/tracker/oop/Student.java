@@ -5,12 +5,15 @@ public class Student {
         Student petya = new Student();
 
         for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < 2; j++) {
-                petya.playForward();
-                petya.songForward();
+            petya.playForward();
+            petya.songForward();
+            for (int j = 0; j < 1; j++) {
+                petya.playBack();
+                petya.songBack();
             }
-            petya.playBack();
-            petya.songBack();
+            petya.playForward();
+            petya.songForward();
+
         }
     }
 
@@ -23,10 +26,10 @@ public class Student {
     }
 
     public void playForward() {
-        System.out.println("Do Re Mi Fa Sol Lya Ci Do");
+        System.out.println("С D E F G A H C");
     }
 
     public void playBack() {
-        System.out.println("Do Ci Lya Sol Fa Mi Re Do");
+        System.out.println("C H A G F E D C");
     }
 }
