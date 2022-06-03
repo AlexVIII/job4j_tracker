@@ -1,7 +1,7 @@
 package ru.job4j.tracker.oop;
 
 public class Jukebox {
-    public String music(int position){
+    public String music(int position) {
         String song;
         if (position == 1) {
             song = "Пусть  бегут неуклюже";
