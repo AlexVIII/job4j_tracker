@@ -1,24 +1,22 @@
 package ru.job4j.tracker.oop;
 
 public class Jukebox {
-    public String music(int position) {
-        String song;
+    public void music(int position) {
         if (position == 1) {
-            song = "Пусть  бегут неуклюже";
+            System.out.println("Сейчас выступит Василий и споет песню - Пусть  бегут неуклюже.");
         } else if (position == 2) {
-            song = "Медведица";
+            System.out.println("Браво. Еще одна песня - Медведица");
         } else {
-            song = "Всем спасибо.Концерт закончен";
+            System.out.println("Всем спасибо.Концерт закончен");
         }
-        return song;
     }
 
     public static void main(String[] args) {
-        Jukebox vasya = new Jukebox();
-        Jukebox max =  new Jukebox();
-        System.out.println("Сейчас выступит Василий и споет песню " + vasya.music(1));
+        Jukebox solo = new Jukebox();
+        solo.music(1);
         System.out.println("Поприветствуем");
-        System.out.println("Браво. Еще одна песня. Исполнит Макс - " + max.music(2));
-        System.out.println(max.music(0));
+        solo.music(2);
+        System.out.println("__________________");
+        solo.music(0);
     }
 }
