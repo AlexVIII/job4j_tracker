@@ -4,7 +4,7 @@ public class Ball {
     public void tryRun(boolean condition) {
     if (condition) {
         System.out.println("съела");
-    } else {
+        } else {
         System.out.println("ушел,");
     }
     }
