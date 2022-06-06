@@ -1,4 +1,4 @@
-package ru.job4j.tracker.oop;
+package oop;
 
 public class Ball {
     public void tryRun(boolean condition) {

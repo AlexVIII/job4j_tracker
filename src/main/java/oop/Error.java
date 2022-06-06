@@ -1,4 +1,4 @@
-package ru.job4j.tracker.oop;
+package oop;
 
 public class Error {
     private int status;
@@ -6,9 +6,9 @@ public class Error {
     private String message;
 
     public Error(boolean active, int status, String message) {
-    this.active = active;
-    this.status = status;
-    this.message = message;
+        this.active = active;
+        this.status = status;
+        this.message = message;
     }
 
     public static void main(String[] args) {
