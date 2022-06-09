@@ -25,7 +25,7 @@ public class PointTest {
 
     @Test
     public void when143And546Then5() {
-        Point a = new Point(1,4,3);
+        Point a = new Point(1, 4, 3);
         Point b = new Point(5, 4, 6);
         double result = a.distance3d(b);
         double expected = 5;
@@ -34,7 +34,7 @@ public class PointTest {
 
     @Test
     public void when646And854Then3() {
-        Point a = new Point(6,4,6);
+        Point a = new Point(6, 4, 6);
         Point b = new Point(8, 5, 4);
         double result = a.distance3d(b);
         double expected = 3;
