@@ -31,4 +31,13 @@ public class PointTest {
         double expected = 5;
         Assert.assertEquals(expected, result, 0.0);
     }
+
+    @Test
+    public void when646And854Then3() {
+        Point a = new Point(6,4,6);
+        Point b = new Point(8, 5, 4);
+        double result = a.distance3d(b);
+        double expected = 3;
+        Assert.assertEquals(expected, result, 0.0);
+    }
 }
