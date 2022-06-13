@@ -1,7 +1,7 @@
 package ru.job4j.encapsulation;
 
 public class Config {
-    public String name;//String name
+    private String name;//String name
     private int position;//protected int position;
     public String[] properties;
 
