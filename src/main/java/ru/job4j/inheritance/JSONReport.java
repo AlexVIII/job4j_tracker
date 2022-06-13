@@ -2,6 +2,7 @@ package ru.job4j.inheritance;
 
 public class JSONReport extends Techport {
 
+    @Override
     public String generate(String name, String body) {
         return "{" + System.lineSeparator()
                 + "\t\"name\" : " + "\"" + name + "\"," + System.lineSeparator()
