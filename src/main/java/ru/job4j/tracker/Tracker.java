@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
 
-import java.time.LocalDateTime;
-
 public class Tracker {
     private final Item[] items = new Item[100];
     private int ids = 1;
@@ -13,7 +11,6 @@ public class Tracker {
         items[size++] = item;
         return item;
     }
-
 
     public Item findById(int id) {
         Item rsl = null;
