@@ -12,9 +12,8 @@ public class College {
         student.setCreated(new Date());
 
         System.out.println("|code|" + "     ФИО    |" + "Группа | " + "    Дата Поступления");
-        System.out.println("| " + student.getCode() + "  | " + student.getNameSurname()  + "|"+ student.getGroup() + "|" + student.getCreated());
+        System.out.println("| " + student.getCode() + "  | " + student.getNameSurname()  + "|"
+                + student.getGroup() + "|" + student.getCreated());
     }
 
 }
-//. Создайте класс ru.job4j.pojo.College с методом main. В методе main создайте объект
-// Student и заполните поля через set. Добавьте вывод на консоль объекта student через методы get.
