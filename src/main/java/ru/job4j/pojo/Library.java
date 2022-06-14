@@ -28,9 +28,7 @@ public class Library {
         System.out.println("______Not empty list_________");
         for (int i = 0; i < books.length; i++) {
             Book bk =  books[i];
-            if (bk.getName().equals("Empty")) {
-                bk.setName(null);
-            } else {
+            if ("Clean code".equals(bk.getName())) {
                 System.out.println(bk.getName() + ", стр." + bk.getCount());
             }
         }
