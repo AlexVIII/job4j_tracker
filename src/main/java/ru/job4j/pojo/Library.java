@@ -6,27 +6,34 @@ public class Library {
         Book second = new Book("Empty", 0);
         Book third = new Book("Empty", 0);
         Book forth = new Book("Empty", 0);
-        Book[] kniga = new Book[4];
-        kniga[0] = first;
-        kniga[1] = second;
-        kniga[2] = third;
-        kniga[3] = forth;
+        Book[] books = new Book[4];
+        books[0] = first;
+        books[1] = second;
+        books[2] = third;
+        books[3] = forth;
 
-        for (int index = 0; index < kniga.length; index++) {
-            Book bk = kniga[index];
+        for (int index = 0; index < books.length; index++) {
+            Book bk = books[index];
             System.out.println(bk.getName() + ", стр." + bk.getCount());
         }
 
-        Book temp = kniga[0];
-        kniga[0] = kniga[3];
-        kniga[3] = temp;
+        Book temp = books[0];
+        books[0] = books[3];
+        books[3] = temp;
         System.out.println("______Change list_________");
-
-        for (int index = 0; index < kniga.length; index++) {
-            Book bk = kniga[index];
+        for (int index = 0; index < books.length; index++) {
+            Book bk = books[index];
             System.out.println(bk.getName() + ", стр." + bk.getCount());
         }
-
+        System.out.println("______Not empty list_________");
+        for (int i = 0; i < books.length; i++) {
+            Book bk =  books[i];
+            if (bk.getName().equals("Empty")) {
+                bk.setName(null);
+            } else {
+                System.out.println(bk.getName() + ", стр." + bk.getCount());
+            }
+        }
     }
 }
 
