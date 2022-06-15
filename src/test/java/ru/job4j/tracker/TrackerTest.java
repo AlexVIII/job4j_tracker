@@ -15,4 +15,27 @@ public class TrackerTest {
         Item result = tracker.findById(item.getId());
         assertThat(result.getName(), is(item.getName()));
     }
+
+    @Test
+    public void whenFindById() {
+        Tracker tracker = new Tracker();
+        Item bug =  new Item();
+        bug.setName("Bug");
+        Item item = tracker.add(bug);
+        Item result = tracker.findById(item.getId());
+        assertThat(result.getName(), is(item.getName()));
+    }
+
+    @Test
+    public void whenFindAll() {
+        Tracker tracker = new Tracker();
+        Item first = new Item();
+        Item second = new Item();
+        first.setName("First");
+        second.setName("Second");
+        tracker.add(first);
+        tracker.add(second);
+        Item result =  tracker.findAll()[0];
+        assertThat(result.getName(), is(first.getName()));
+    }
 }
