@@ -29,13 +29,25 @@ public class TrackerTest {
     @Test
     public void whenFindAll() {
         Tracker tracker = new Tracker();
-        Item first = new Item();
-        Item second = new Item();
-        first.setName("First");
-        second.setName("Second");
+        Item first = new Item("First");
+        Item second = new Item("Second");
         tracker.add(first);
         tracker.add(second);
         Item result =  tracker.findAll()[0];
         assertThat(result.getName(), is(first.getName()));
+    }
+
+    @Test
+    public void whenFindName() {
+        Tracker tracker = new Tracker();
+        Item first = new Item("First");
+        Item second = new Item("Second");
+        tracker.add(first);
+        tracker.add(second);
+        tracker.add(new Item("First"));
+        tracker.add(new Item("Second"));
+        tracker.add(new Item("First"));
+        Item[] result =  tracker.findNyName(first.getName());
+        assertThat(result[2].getName(), is(first.getName()));
     }
 }
