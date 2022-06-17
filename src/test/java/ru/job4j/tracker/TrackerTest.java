@@ -19,7 +19,7 @@ public class TrackerTest {
     @Test
     public void whenFindById() {
         Tracker tracker = new Tracker();
-        Item bug =  new Item();
+        Item bug = new Item();
         bug.setName("Bug");
         Item item = tracker.add(bug);
         Item result = tracker.findById(item.getId());
@@ -33,7 +33,7 @@ public class TrackerTest {
         Item second = new Item("Second");
         tracker.add(first);
         tracker.add(second);
-        Item result =  tracker.findAll()[0];
+        Item result = tracker.findAll()[0];
         assertThat(result.getName(), is(first.getName()));
     }
 
@@ -47,7 +47,20 @@ public class TrackerTest {
         tracker.add(new Item("First"));
         tracker.add(new Item("Second"));
         tracker.add(new Item("First"));
-        Item[] result =  tracker.findNyName(first.getName());
+        Item[] result = tracker.findNyName(first.getName());
         assertThat(result[2].getName(), is(first.getName()));
+    }
+
+    @Test
+    public void whenReplace() {
+        Tracker tracker = new Tracker();
+        Item bug = new Item();
+        bug.setName("Bug");
+        tracker.add(bug);
+        int id = bug.getId();
+        Item bugWithDesc = new Item();
+        bugWithDesc.setName("Bug with description");
+        tracker.replace(id, bugWithDesc);
+        assertThat(tracker.findById(id).getName(), is("Bug with description"));
     }
 }
