@@ -41,16 +41,7 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        Item[] rsl = new Item[size];
-        int count = 0;
-        for (int i = 0; i < size; i++) {
-            Item item = items[i];
-            if (item.getName() != null) {
-                rsl[count] = item;
-                count++;
-            }
-        }
-        return Arrays.copyOf(rsl, size);
+        return Arrays.copyOf(items, size);
     }
 
     private int indexof(int id) {
@@ -77,7 +68,7 @@ public class Tracker {
     public boolean delete(int id) {
         int index = indexof(id);
         items[index] = null;
-        System.arraycopy(items, index + 1, items, index, size - index - 1);
+        System.arraycopy(items, id + 1, items, id, size - id - 1);
         items[size - 1] = null;
         size--;
         return true;
@@ -85,7 +76,7 @@ public class Tracker {
 
     public int sizes(int id) {
         int index = indexof(id);
-        items[index] = null;
+     //   items[index] = null;
         System.arraycopy(items, index + 1, items, index, size - index - 1);
         items[size - 1] = null;
         size--;
