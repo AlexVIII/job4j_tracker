@@ -14,15 +14,6 @@ public class Item {
 
     }
 
-    @Override
-    public String toString() {
-        return "Item{"
-                + "id =" + id
-                + ", name ='" + name + '\''
-                + ", created = " + created.format(FORMATTER)
-                + '}';
-    }
-
     public Item(int id) {
         this.id = id;
     }
@@ -34,6 +25,15 @@ public class Item {
 
     public Item(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{"
+                + "id =" + id
+                + ", name ='" + name + '\''
+                + ", created = " + created.format(FORMATTER)
+                + '}';
     }
 
     public LocalDateTime getTime() {
