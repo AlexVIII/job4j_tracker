@@ -20,8 +20,24 @@ public class StartUI {
             } else if (select == 1) {
                 System.out.println("Show all items");
                 Item[] items = tracker.findAll();
-                for (Item item:items) {
-                    System.out.println(item);
+                if (items.length > 0) {
+                    for (Item item:items) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("Хранилище.Заявок не найдено");
+                }
+            } else if (select == 2) {
+                System.out.println("Edit item");
+                System.out.println("Enter id :");
+                int id = Integer.parseInt(scanner.nextLine());
+                System.out.println("Enter new name :");
+                String name = scanner.nextLine();
+                Item item = new Item(name);
+                if (tracker.replace(id, item)) {
+                    System.out.println("Заявка успешна изменена");
+                } else {
+                    System.out.println("Данной заявки нет");
                 }
             } else if (select == 6) {
                 run = false;
