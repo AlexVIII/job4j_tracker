@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 public class TrackerTest {
@@ -80,6 +78,6 @@ public class TrackerTest {
         int id = bug.getId();
         int idNext = bugNext.getId();
         tracker.delete(idNext);
-        assertNotNull(tracker.findById(id));
+        assertNull(tracker.findById(idNext));
     }
 }
