@@ -20,6 +20,7 @@ public class StartUI {
             } else if (select == 1) {
                 System.out.println("Show all items");
                 Item[] items = tracker.findAll();
+                System.out.println("_____________");
                 if (items.length > 0) {
                     for (Item item:items) {
                         System.out.println(item);
@@ -27,6 +28,7 @@ public class StartUI {
                 } else {
                     System.out.println("Хранилище.Заявок не найдено");
                 }
+                System.out.println("_____________");
             } else if (select == 2) {
                 System.out.println("Edit item");
                 System.out.println("Enter id :");
@@ -34,11 +36,24 @@ public class StartUI {
                 System.out.println("Enter new name :");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
+                System.out.println("_____________");
                 if (tracker.replace(id, item)) {
                     System.out.println("Заявка успешна изменена");
                 } else {
                     System.out.println("Данной заявки нет");
                 }
+                System.out.println("_____________");
+            } else if (select == 3) {
+                System.out.println("Delete item");
+                System.out.println("Enter id :");
+                int id = Integer.parseInt(scanner.nextLine());
+                System.out.println("_____________");
+                if (tracker.delete(id)) {
+                    System.out.println("Заявка успешно удалена");
+                } else {
+                    System.out.println("Данной заяки нет");
+                }
+                System.out.println("_____________");
             } else if (select == 6) {
                 run = false;
             }
