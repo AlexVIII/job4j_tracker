@@ -13,15 +13,21 @@ public class Matchers {
             System.out.println(player);
             System.out.println("Ведите число от 1 до 3 :");
             int matchers = Integer.parseInt(input.nextLine());
-            while (matchers > 3) {
-                System.out.println("Недопустимое значение.Повторите ввод");
-                System.out.println("Остаток " + count + "  (Значение от 1 до 3)");
-                matchers = Integer.parseInt(input.nextLine());
+            while (matchers >= 0) {
+                if (matchers == 0 || matchers > 3) {
+                    System.out.println("Недопустимое значение.Повторите ввод");
+                    System.out.println("Ведите число от 1 до 3 :");
+                    matchers = Integer.parseInt(input.nextLine());
+                } else if (count >= matchers) {
+                  //  System.out.println("Остаток " + count + "  (Значение от 1 до 3)");
+                    break;
+                }
             }
             turn = !turn;
             count = count - matchers;
+            System.out.println(" __________");
             System.out.println("Остаток " + count);
-
+            System.out.println(" __________");
         }
         if (!turn) {
             System.out.println("Выиграл первый игрок");
