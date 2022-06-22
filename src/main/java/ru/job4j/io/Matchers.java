@@ -19,7 +19,6 @@ public class Matchers {
                     System.out.println("Ведите число от 1 до 3 :");
                     matchers = Integer.parseInt(input.nextLine());
                 } else if (count >= matchers) {
-                  //  System.out.println("Остаток " + count + "  (Значение от 1 до 3)");
                     break;
                 }
             }
