@@ -11,8 +11,8 @@ public class StartUI {
             System.out.print("Select: ");
             int select = Integer.parseInt(scanner.nextLine());
             if (select == 0) {
-                System.out.println("Create a new Item");
-                System.out.println("Enter new name:");
+                System.out.print("Create a new Item ");
+                System.out.print("Enter new name: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item);
@@ -74,9 +74,9 @@ public class StartUI {
 
     private  void showMenu(Scanner scanner) {
         String[] menu = {
-                "Add new Item", "Show all items", "Edit item",
-                "Delete item", "Find item by id", "Find items by name",
-                "Exit Program"
+                "- Add new Item -", "- Show all items -", "- Edit item -",
+                "- Delete item -", "- Find item by id - ", "- Find items by name -",
+                "- Exit Program -"
         };
         System.out.println("Menu:");
         for (int i = 0; i < menu.length; i++) {
