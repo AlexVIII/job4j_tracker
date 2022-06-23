@@ -31,7 +31,6 @@ public class Tracker {
         return Arrays.copyOf(rsl, size);
     }
 
-
     public Item[] findAll() {
         return Arrays.copyOf(items, size);
     }
