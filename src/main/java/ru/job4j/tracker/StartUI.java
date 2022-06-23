@@ -26,9 +26,9 @@ public class StartUI {
                         System.out.println(item);
                     }
                 } else {
-                    System.out.println("Хранилище.Заявок не найдено");
+                    System.out.println("Хранилище пустое. Заявок не найдено");
                 }
-                System.out.println("_____________");
+                System.out.println("____________");
             } else if (select == 2) {
                 System.out.println("Edit item");
                 System.out.println("Enter id :");
@@ -43,6 +43,18 @@ public class StartUI {
                     System.out.println("Данной заявки нет");
                 }
                 System.out.println("_____________");
+            } else if (select == 4) {
+                System.out.println("Find item by id");
+                System.out.println("Enter id :");
+                int id = Integer.parseInt(scanner.nextLine());
+                Item item = new Item(id);
+                System.out.println("_____________");
+                if (item != null) {
+                    System.out.println(item);
+                } else {
+                    System.out.println("Заявка не найдена");
+                    System.out.println("_____________");
+                }
             } else if (select == 3) {
                 System.out.println("Delete item");
                 System.out.println("Enter id :");
@@ -54,6 +66,7 @@ public class StartUI {
                     System.out.println("Данной заяки нет");
                 }
                 System.out.println("_____________");
+
             } else if (select == 6) {
                 run = false;
             }
