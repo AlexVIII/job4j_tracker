@@ -43,6 +43,17 @@ public class StartUI {
                     System.out.println("Данной заявки нет");
                 }
                 System.out.println("_____________");
+            } else if (select == 3) {
+                System.out.println("Delete item");
+                System.out.print("Enter id :");
+                int id = Integer.parseInt(scanner.nextLine());
+                System.out.println("_____________");
+                if (tracker.delete(id)) {
+                    System.out.println("Заявка успешно удалена");
+                } else {
+                    System.out.println("Данной заяки нет");
+                }
+                System.out.println("_____________");
             } else if (select == 4) {
                 System.out.println("Find item by id");
                 System.out.println("Enter id :");
@@ -55,18 +66,6 @@ public class StartUI {
                     System.out.println("Заявка не найдена");
                     System.out.println("____________");
                 }
-            } else if (select == 3) {
-                System.out.println("Delete item");
-                System.out.println("Enter id :");
-                int id = Integer.parseInt(scanner.nextLine());
-                System.out.println("_____________");
-                if (tracker.delete(id)) {
-                    System.out.println("Заявка успешно удалена");
-                } else {
-                    System.out.println("Данной заяки нет");
-                }
-                System.out.println("_____________");
-
             } else if (select == 6) {
                 run = false;
             }
