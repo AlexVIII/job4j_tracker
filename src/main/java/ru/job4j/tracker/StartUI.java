@@ -30,10 +30,10 @@ public class StartUI {
                 }
                 System.out.println("____________");
             } else if (select == 2) {
-                System.out.println("Edit item");
-                System.out.println("Enter id :");
+                System.out.print("Edit item");
+                System.out.print("Enter id : ");
                 int id = Integer.parseInt(scanner.nextLine());
-                System.out.println("Enter new name :");
+                System.out.print("Enter new name : ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 System.out.println("_____________");
