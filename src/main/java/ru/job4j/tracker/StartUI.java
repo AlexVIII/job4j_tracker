@@ -53,7 +53,7 @@ public class StartUI {
                     System.out.println(item);
                 } else {
                     System.out.println("Заявка не найдена");
-                    System.out.println("_____________");
+                    System.out.println("____________");
                 }
             } else if (select == 3) {
                 System.out.println("Delete item");
