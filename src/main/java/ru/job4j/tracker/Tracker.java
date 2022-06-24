@@ -23,7 +23,7 @@ public class Tracker {
         int count = 0;
         for (int i = 0; i < size; i++) {
             Item item = items[i];
-            if (item.getName().contains(key)) {
+            if (item.getName().equals(key)) {
                 rsl[count] = item;
                 count++;
             }
