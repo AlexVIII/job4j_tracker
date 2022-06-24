@@ -2,21 +2,17 @@ package ru.job4j.poly;
 
 public class Bus implements Transport {
     @Override
-    public boolean run() {
-        int ps = 11;
-        if (passengers(ps)) {
-            return run();
-        }
-        return false;
+    public void run() {
+        System.out.println("Добрый день. Вас приветствует такси 'Вояж'");
+        System.out.println("Стоимость поездки 20 руб.");
     }
 
     @Override
-    public boolean passengers(int count) {
+    public void passengers(int count) {
         if (count > 10) {
             System.out.println("Маршрутка заполнена, начинаем движение");
-            return true;
         } else {
-            return false;
+            System.out.println("Ждем пассажиров");
         }
     }
 
