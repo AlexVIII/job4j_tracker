@@ -4,12 +4,16 @@ import java.util.Scanner;
 
 public class StartUI {
 
-    public void init(Scanner scanner, Tracker tracker) {
+    private String msg;
+    private Scanner scanner;
+
+    public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
-            showMenu(scanner);
+            showMenu(input);
             System.out.print("Select: ");
-            int select = Integer.parseInt(scanner.nextLine());
+            int select;
+            select = Integer.parseInt(input.askStr(msg));
             if (select == 0) {
                 System.out.print("Create a new Item ");
                 System.out.print("Enter new name: ");
@@ -86,7 +90,7 @@ public class StartUI {
         }
     }
 
-    private  void showMenu(Scanner scanner) {
+    private  void showMenu(Input scanner) {
         String[] menu = {
                 "- Add new Item -", "- Show all items -", "- Edit item -",
                 "- Delete item -", "- Find item by id - ", "- Find items by name -",
@@ -99,8 +103,8 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        new StartUI().init(scanner, tracker);
+        new StartUI().init(input, tracker);
     }
 }
