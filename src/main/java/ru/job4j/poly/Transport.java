@@ -7,4 +7,3 @@ public interface Transport {
 
     int gasStation(int litres, int tank);
 }
-
