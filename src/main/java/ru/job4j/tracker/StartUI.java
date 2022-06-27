@@ -116,7 +116,8 @@ public class StartUI {
             System.out.println(i + ". " + menu[i]);
         }
     }
-    public void tabloMenu(Input input, Tracker tracker) {
+
+    public void menu(Input input, Tracker tracker) {
         StartUI.createItem(input, tracker);
         StartUI.showAllItems(tracker);
         StartUI.replaceItem(input, tracker);
@@ -129,11 +130,6 @@ public class StartUI {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         new StartUI().init(input, tracker);
-      /*  StartUI.createItem(input, tracker);
-        StartUI.showAllItems(tracker);
-        StartUI.replaceItem(input, tracker);
-        StartUI.delete(input, tracker);
-        StartUI.findByName(input, tracker);
-        StartUI.findById(input, tracker);*/
+
     }
 }
