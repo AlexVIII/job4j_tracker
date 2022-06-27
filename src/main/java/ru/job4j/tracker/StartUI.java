@@ -116,16 +116,24 @@ public class StartUI {
             System.out.println(i + ". " + menu[i]);
         }
     }
-
-    public static void main(String[] args) {
-        Input input = new ConsoleInput();
-        Tracker tracker = new Tracker();
-        new StartUI().init(input, tracker);
+    public void tabloMenu(Input input, Tracker tracker) {
         StartUI.createItem(input, tracker);
         StartUI.showAllItems(tracker);
         StartUI.replaceItem(input, tracker);
         StartUI.delete(input, tracker);
         StartUI.findByName(input, tracker);
         StartUI.findById(input, tracker);
+    }
+
+    public static void main(String[] args) {
+        Input input = new ConsoleInput();
+        Tracker tracker = new Tracker();
+        new StartUI().init(input, tracker);
+      /*  StartUI.createItem(input, tracker);
+        StartUI.showAllItems(tracker);
+        StartUI.replaceItem(input, tracker);
+        StartUI.delete(input, tracker);
+        StartUI.findByName(input, tracker);
+        StartUI.findById(input, tracker);*/
     }
 }
