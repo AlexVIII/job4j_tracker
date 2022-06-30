@@ -46,7 +46,7 @@ public class StartUI {
                 int id = input.askInt("Enter id :");
                 System.out.println("_____________");
                 if (tracker.delete(id)) {
-                    System.out.println("Item was deleted");
+                    System.out.println("Item was deleted successfully");
                 } else {
                     System.out.println("Item don't find");
                 }
