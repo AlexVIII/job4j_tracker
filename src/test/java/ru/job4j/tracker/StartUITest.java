@@ -5,7 +5,6 @@ import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertNull;
-
 public class StartUITest {
 
     @Test
@@ -35,10 +34,9 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("new Item");
         tracker.add(item);
-        String[] answers = {String.valueOf(item.getId()), "Данной заявки нет"};
+        String[] answers = {String.valueOf(item.getId()), "Item was deleted"};
         StartUI.delete(new StubInput(answers), tracker);
         Item deleted = tracker.findById(item.getId());
-        assertNull(deleted.getName());
+        assertNull(deleted);
     }
-
 }

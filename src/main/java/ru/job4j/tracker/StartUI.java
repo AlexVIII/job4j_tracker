@@ -46,9 +46,9 @@ public class StartUI {
                 int id = input.askInt("Enter id :");
                 System.out.println("_____________");
                 if (tracker.delete(id)) {
-                    System.out.println("Заявка успешно удалена");
+                    System.out.println("Item was deleted");
                 } else {
-                    System.out.println("Данной заяки нет");
+                    System.out.println("Item don't find");
                 }
                 System.out.println("_____________");
     }
