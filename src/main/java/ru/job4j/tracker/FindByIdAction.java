@@ -18,8 +18,8 @@ public class FindByIdAction implements UserAction {
             System.out.println(item);
         } else {
             System.out.println("Заявка не найдена");
-            System.out.println("____________");
         }
+        System.out.println("____________");
         return true;
     }
 }
