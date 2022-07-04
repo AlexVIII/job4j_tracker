@@ -1,11 +1,6 @@
 package ru.job4j.tracker;
 
 public class StartUI {
-    private final Output out;
-
-    public StartUI(Output out) {
-        this.out = out;
-    }
 
     public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
@@ -15,19 +10,19 @@ public class StartUI {
             UserAction action = actions[select];
             run = action.execute(input, tracker);
             if (select == 0) {
-                new CreateAction(out);
+                new CreateAction();
             } else if (select == 1) {
-                new FindAllAction(out);
+                new FindAllAction();
             } else if (select == 2) {
-                new ReplaceAction(out);
+                new ReplaceAction();
             } else if (select == 3) {
-                new DeleteAction(out);
+                new DeleteAction();
             } else if (select == 4) {
-              new FindByIdAction(out);
+              new FindByIdAction();
             } else if (select == 5) {
-               new FindByNameAction(out);
+               new FindByNameAction();
             } else if (select == 6) {
-                new ExitAction(out);
+                new ExitAction();
             }
         }
     }
@@ -45,17 +40,16 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-       Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction(output),
-                new FindAllAction(output),
-                new ReplaceAction(output),
-                new DeleteAction(output),
-                new FindByIdAction(output),
-                new FindByNameAction(output),
-                new ExitAction(output)};
-        new StartUI(output).init(input, tracker, actions);
+                new CreateAction(),
+                new FindAllAction(),
+                new ReplaceAction(),
+                new DeleteAction(),
+                new FindByIdAction(),
+                new FindByNameAction(),
+                new ExitAction()};
+        new StartUI().init(input, tracker, actions);
     }
 }
