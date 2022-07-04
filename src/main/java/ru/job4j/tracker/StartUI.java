@@ -27,7 +27,7 @@ public class StartUI {
             } else if (select == 5) {
                new FindByNameAction(out);
             } else if (select == 6) {
-                new ExitAction();
+                new ExitAction(out);
             }
         }
     }
@@ -55,7 +55,7 @@ public class StartUI {
                 new DeleteAction(output),
                 new FindByIdAction(output),
                 new FindByNameAction(output),
-                new ExitAction()};
+                new ExitAction(output)};
         new StartUI(output).init(input, tracker, actions);
     }
 }
