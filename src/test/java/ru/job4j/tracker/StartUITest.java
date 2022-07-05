@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertNull;
 public class StartUITest {
+
     @Test
     public void whenReplaceItemSuccessfully() {
         Output out = new StubOutput();
