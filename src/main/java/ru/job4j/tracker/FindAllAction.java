@@ -2,6 +2,13 @@ package ru.job4j.tracker;
 
 public class FindAllAction implements UserAction {
 
+    private final Output output;
+
+    public FindAllAction(Output output) {
+        this.output = output;
+    }
+
+
     @Override
     public String name() {
         return "- Show all items -";
@@ -9,17 +16,17 @@ public class FindAllAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("Show all items");
+        output.println("Show all items");
         Item[] items = tracker.findAll();
-        System.out.println("_____________");
+        output.println("_____________");
         if (items.length > 0) {
             for (Item item:items) {
-                System.out.println(item);
+                output.println(item);
             }
         } else {
-            System.out.println("Хранилище пустое. Заявок не найдено");
+            output.println("Хранилище пустое. Заявок не найдено");
         }
-        System.out.println("____________");
+        output.println("____________");
         return true;
     }
 }
