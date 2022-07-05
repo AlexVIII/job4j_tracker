@@ -22,13 +22,8 @@ public class StartUITest {
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         String menu  = "Menu:" + ln
-                + "0. - Add new Item -" + ln
-                + "1. - Show all items -" + ln
-                + "2. - Edit item -" + ln
-                + "3. - Delete item -" + ln
-                + "4. - Find item by id -" + ln
-                + "5. - Find items by name -" + ln
-                + "6. - Exit Program -" + ln;
+                + "0. - Edit item -" + ln
+                + "1. - Exit Program -" + ln;
         assertThat(out.toString(), is(
                 menu
                         + "Edit item" + ln
@@ -55,13 +50,8 @@ public class StartUITest {
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         String menu  = "Menu:" + ln
-                + "0. - Add new Item -" + ln
-                + "1. - Show all items -" + ln
-                + "2. - Edit item -" + ln
-                + "3. - Delete item -" + ln
-                + "4. - Find item by id -" + ln
-                + "5. - Find items by name -" + ln
-                + "6. - Exit Program -" + ln;
+                + "0. - Show all items -" + ln
+                + "1. - Exit Program -" + ln;
         assertThat(out.toString(), is(
                 menu
                         + "Show all items" + ln
@@ -89,13 +79,8 @@ public class StartUITest {
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         String menu  = "Menu:" + ln
-                + "0. - Add new Item -" + ln
-                + "1. - Show all items -" + ln
-                + "2. - Edit item -" + ln
-                + "3. - Delete item -" + ln
-                + "4. - Find item by id -" + ln
-                + "5. - Find items by name -" + ln
-                + "6. - Exit Program -" + ln;
+                + "0. - Find items by name -" + ln
+                + "1. - Exit Program -" + ln;
         assertThat(out.toString(), is(
                         menu
                 + "Find item by name" + ln
@@ -121,13 +106,8 @@ public class StartUITest {
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         String menu  = "Menu:" + ln
-                + "0. - Add new Item -" + ln
-                + "1. - Show all items -" + ln
-                + "2. - Edit item -" + ln
-                + "3. - Delete item -" + ln
-                + "4. - Find item by id -" + ln
-                + "5. - Find items by name -" + ln
-                + "6. - Exit Program -" + ln;
+                + "0. - Find item by id -" + ln
+                + "1. - Exit Program -" + ln;
         assertThat(out.toString(), is(
                         menu
                 + "Find item by id" + ln
@@ -151,13 +131,7 @@ public class StartUITest {
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         String menu  = "Menu:" + ln
-                + "0. - Add new Item -" + ln
-                + "1. - Show all items -" + ln
-                + "2. - Edit item -" + ln
-                + "3. - Delete item -" + ln
-                + "4. - Find item by id -" + ln
-                + "5. - Find items by name -" + ln
-                + "6. - Exit Program -" + ln;
+                + "0. - Exit Program -" + ln;
         assertThat(out.toString(), is(
                 menu
         ));
