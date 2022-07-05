@@ -8,7 +8,6 @@ public class FindAllAction implements UserAction {
         this.output = output;
     }
 
-
     @Override
     public String name() {
         return "- Show all items -";
