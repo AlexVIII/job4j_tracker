@@ -21,24 +21,32 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
+        String menu  = "Menu:" + ln
+                + "0. - Add new Item -" + ln
+                + "1. - Show all items -" + ln
+                + "2. - Edit item -" + ln
+                + "3. - Delete item -" + ln
+                + "4. - Find item by id -" + ln
+                + "5. - Find items by name -" + ln
+                + "6. - Exit Program -" + ln;
         assertThat(out.toString(), is(
-                        "Menu:" + ln
-                                + "0. - Add new Item -" + ln
-                                + "2. - Edit item -" + ln
-                                + "_____________" + ln
-                                + "Item is changed" + ln
-                                + "_____________" + ln
-                                + "6. - Exit Program -" + ln
+                menu
+                        + "Edit item" + ln
+                        + "_____________" + ln
+                        + "Item is changed" + ln
+                        + "_____________" + ln
+                        + menu
                 )
         );
     }
-/*
+
     @Test
     public void whenFindAllActionSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("Find All"));
         Input in = new StubInput(
-                new String[]{"0", String.valueOf(tracker.add(new Item("FindAll"))), "1", "2"}
+                new String[]{"0", "1"}
         );
         UserAction[] actions = {
                 new FindAllAction(out),
@@ -46,15 +54,21 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
+        String menu  = "Menu:" + ln
+                + "0. - Add new Item -" + ln
+                + "1. - Show all items -" + ln
+                + "2. - Edit item -" + ln
+                + "3. - Delete item -" + ln
+                + "4. - Find item by id -" + ln
+                + "5. - Find items by name -" + ln
+                + "6. - Exit Program -" + ln;
         assertThat(out.toString(), is(
-                        "Menu:" + ln
-                                + "0. - Add new Item -" + ln
-                                + "1. - Show all items -" + ln
-                                + "2. - Edit item -" + ln
-                                + "3. - Delete item -" + ln
-                                + "4. - Find item by id -" + ln
-                                + "5. - Find items by name -" + ln
-                                + "6. - Exit Program -" + ln
+                menu
+                        + "Show all items" + ln
+                        + "_____________" + ln
+                        + item + ln
+                        + "____________" + ln
+                + menu
                 )
         );
 
@@ -74,15 +88,20 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
+        String menu  = "Menu:" + ln
+                + "0. - Add new Item -" + ln
+                + "1. - Show all items -" + ln
+                + "2. - Edit item -" + ln
+                + "3. - Delete item -" + ln
+                + "4. - Find item by id -" + ln
+                + "5. - Find items by name -" + ln
+                + "6. - Exit Program -" + ln;
         assertThat(out.toString(), is(
-                        "Menu:" + ln
-                                + "0. - Add new Item -" + ln
-                                + "1. - Show all items -" + ln
-                                + "2. - Edit item -" + ln
-                                + "3. - Delete item -" + ln
-                                + "4. - Find item by id -" + ln
-                                + "5. - Find items by name -" + ln
-                                + "6. - Exit Program -" + ln
+                        menu
+                + "Find item by name" + ln
+                + "_____________" + ln + item + ln
+                + "____________" + ln
+                + menu
                 )
         );
     }
@@ -101,15 +120,20 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
+        String menu  = "Menu:" + ln
+                + "0. - Add new Item -" + ln
+                + "1. - Show all items -" + ln
+                + "2. - Edit item -" + ln
+                + "3. - Delete item -" + ln
+                + "4. - Find item by id -" + ln
+                + "5. - Find items by name -" + ln
+                + "6. - Exit Program -" + ln;
         assertThat(out.toString(), is(
-                        "Menu:" + ln
-                                + "0. - Add new Item -" + ln
-                                + "1. - Show all items -" + ln
-                                + "2. - Edit item -" + ln
-                                + "3. - Delete item -" + ln
-                                + "4. - Find item by id -" + ln
-                                + "5. - Find items by name -" + ln
-                                + "6. - Exit Program -" + ln
+                        menu
+                + "Find item by id" + ln
+                + "_____________" + ln
+                + item + ln + "____________" + ln
+                + menu
                 )
         );
     }
@@ -126,15 +150,16 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
+        String menu  = "Menu:" + ln
+                + "0. - Add new Item -" + ln
+                + "1. - Show all items -" + ln
+                + "2. - Edit item -" + ln
+                + "3. - Delete item -" + ln
+                + "4. - Find item by id -" + ln
+                + "5. - Find items by name -" + ln
+                + "6. - Exit Program -" + ln;
         assertThat(out.toString(), is(
-                "Menu:" + ln
-                        + "0. - Add new Item -" + ln
-                        + "1. - Show all items -" + ln
-                        + "2. - Edit item -" + ln
-                        + "3. - Delete item -" + ln
-                        + "4. - Find item by id -" + ln
-                        + "5. - Find items by name -" + ln
-                        + "6. - Exit Program -" + ln
+                menu
         ));
-    }*/
+    }
 }

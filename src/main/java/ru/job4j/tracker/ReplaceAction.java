@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 public class ReplaceAction implements UserAction {
 
-    private  Output output;
+    private final Output output;
 
     public ReplaceAction(Output output) {
         this.output = output;

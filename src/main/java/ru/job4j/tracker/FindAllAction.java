@@ -23,7 +23,7 @@ public class FindAllAction implements UserAction {
                 output.println(item);
             }
         } else {
-            output.println("Хранилище пустое. Заявок не найдено");
+            output.println("Items don't find");
         }
         output.println("____________");
         return true;
