@@ -6,14 +6,14 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertNull;
 public class StartUITest {
-/*    @Test
+    @Test
     public void whenReplaceItemSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Replaced Item"));
         String replacedName = "New item name";
         Input in = new StubInput(
-                new String[]{"0", String.valueOf(item.getName()), "1", String.valueOf(item.getId()), replacedName, "2"}
+                new String[]{"0", String.valueOf(item.getId()), replacedName, "1"}
         );
         UserAction[] actions = {
                 new ReplaceAction(out),
@@ -24,16 +24,15 @@ public class StartUITest {
         assertThat(out.toString(), is(
                         "Menu:" + ln
                                 + "0. - Add new Item -" + ln
-                                + "1. - Show all items -" + ln
                                 + "2. - Edit item -" + ln
-                                + "3. - Delete item -" + ln
-                                + "4. - Find item by id -" + ln
-                                + "5. - Find items by name -" + ln
+                                + "_____________" + ln
+                                + "Item is changed" + ln
+                                + "_____________" + ln
                                 + "6. - Exit Program -" + ln
                 )
         );
     }
-
+/*
     @Test
     public void whenFindAllActionSuccessfully() {
         Output out = new StubOutput();
@@ -114,7 +113,7 @@ public class StartUITest {
                 )
         );
     }
-*/
+
     @Test
     public void whenExit() {
         Output out = new StubOutput();
@@ -137,5 +136,5 @@ public class StartUITest {
                         + "5. - Find items by name -" + ln
                         + "6. - Exit Program -" + ln
         ));
-    }
+    }*/
 }

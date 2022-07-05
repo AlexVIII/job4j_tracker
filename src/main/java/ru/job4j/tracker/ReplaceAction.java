@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 public class ReplaceAction implements UserAction {
 
-    private final Output output;
+    private  Output output;
 
     public ReplaceAction(Output output) {
         this.output = output;
@@ -21,7 +21,7 @@ public class ReplaceAction implements UserAction {
         Item item = new Item(name);
         output.println("_____________");
         if (tracker.replace(id, item)) {
-            output.println("Заявка успешна изменена");
+            output.println("Item is changed");
         } else {
             output.println("Данной заявки нет");
         }
