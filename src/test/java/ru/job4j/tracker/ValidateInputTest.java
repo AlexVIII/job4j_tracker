@@ -51,6 +51,4 @@ public class ValidateInputTest {
         String[] selected = {"0", "1", "2"};
         assertThat(selected, is(new String[] {"0", "1", "2"}));
     }
-
-
 }
