@@ -11,7 +11,7 @@ public class ValidateInputTest {
     public void whenInvalidInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"one", "1"}
+                new String[]{"one", "1"}
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu");
@@ -22,7 +22,7 @@ public class ValidateInputTest {
     public void whenInvalidInputMinus1() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"-1", "1"}
+                new String[]{"-1", "1"}
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu");
@@ -33,7 +33,7 @@ public class ValidateInputTest {
     public void whenInvalidOneInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0"}
+                new String[]{"0"}
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu");
@@ -44,11 +44,13 @@ public class ValidateInputTest {
     public void whenInvalidThreeInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0", "1", "2"}
+                new String[]{"0", "1", "2"}
         );
         ValidateInput input = new ValidateInput(out, in);
-        input.askInt("Enter menu");
-        String[] selected = {"0", "1", "2"};
-        assertThat(selected, is(new String[] {"0", "1", "2"}));
+        int[] data = new int[3];
+        for (int i = 0; i < data.length; i++) {
+            data[i] = input.askInt("Enter menu");
+        }
+        assertThat(data, is(new int[]{0, 1, 2}));
     }
 }
