@@ -48,9 +48,9 @@ public class ValidateInputTest {
         );
         ValidateInput input = new ValidateInput(out, in);
         int[] data = new int[3];
-        for (int i = 0; i < data.length; i++) {
-            data[i] = input.askInt("Enter menu");
-        }
+        data[0] = input.askInt("Enter menu");
+        data[1] = input.askInt("Enter menu");
+        data[2] = input.askInt("Enter menu");
         assertThat(data, is(new int[]{0, 1, 2}));
     }
 }
