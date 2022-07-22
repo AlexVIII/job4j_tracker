@@ -1,6 +1,4 @@
-package ru.job4j.tracker;
-
-import javax.swing.*;
+package ru.job4j.oop.tracker;
 
 public class FindByIdAction implements UserAction {
 
