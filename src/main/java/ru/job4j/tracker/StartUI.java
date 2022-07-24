@@ -21,21 +21,6 @@ public class StartUI {
             }
             UserAction action = actions.get(select);
             run = action.execute(input, tracker);
-          /*  if (select == 0) {
-                new CreateAction(out);
-            } else if (select == 1) {
-                new FindAllAction(out);
-            } else if (select == 2) {
-                new ReplaceAction(out);
-            } else if (select == 3) {
-                new DeleteAction(out);
-            } else if (select == 4) {
-              new FindByIdAction(out);
-            } else if (select == 5) {
-               new FindByNameAction(out);
-            } else if (select == 6) {
-                new ExitAction(out);
-            }*/
         }
     }
 

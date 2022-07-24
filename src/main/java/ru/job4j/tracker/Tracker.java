@@ -7,11 +7,9 @@ import java.util.List;
 public class Tracker {
     private final List<Item> items = new ArrayList<>();
     private int ids = 1;
-  //  private int size = 0;
 
     public Item add(Item item) {
         item.setId(ids++);
- //       items.set(size++, item);
         items.add(item);
         return item;
     }
@@ -61,10 +59,6 @@ public class Tracker {
         int index = indexOf(id);
         boolean rsl = index != -1;
         if (rsl) {
-          /*  items.set(index, null);
-            System.arraycopy(items, index + 1, items, index, size - index - 1);
-            items.set(size - 1, null);
-            size--;*/
             items.remove(index);
         }
         return rsl;
