@@ -1,4 +1,6 @@
-package ru.job4j.oop.tracker;
+package ru.job4j.tracker;
+
+import java.util.List;
 
 public class StartUI {
 
@@ -8,18 +10,18 @@ public class StartUI {
         this.out = out;
     }
 
-    public void init(Input input, Tracker tracker, UserAction[] actions) {
+    public void init(Input input, Tracker tracker, List<UserAction> actions) {
         boolean run = true;
         while (run) {
             showMenu(actions);
             int select = input.askInt("Select: ");
-            if (select < 0 || select >= actions.length) {
-                out.println("WRONG INPUT,You can select : 0 .. " + (actions.length - 1));
+            if (select < 0 || select >= actions.size()) {
+                out.println("WRONG INPUT,You can select : 0 .. " + (actions.size() - 1));
                 continue;
             }
-            UserAction action = actions[select];
+            UserAction action = actions.get(select);
             run = action.execute(input, tracker);
-            if (select == 0) {
+          /*  if (select == 0) {
                 new CreateAction(out);
             } else if (select == 1) {
                 new FindAllAction(out);
@@ -33,14 +35,14 @@ public class StartUI {
                new FindByNameAction(out);
             } else if (select == 6) {
                 new ExitAction(out);
-            }
+            }*/
         }
     }
 
-    private  void showMenu(UserAction[] actions) {
+    private  void showMenu(List<UserAction> actions) {
         out.println("Menu:");
-        for (int i = 0; i < actions.length; i++) {
-            out.println(i + ". " + actions[i].name());
+        for (int i = 0; i < actions.size(); i++) {
+            out.println(i + ". " + actions.get(i).name());
         }
     }
 
@@ -56,6 +58,6 @@ public class StartUI {
                 new FindByIdAction(output),
                 new FindByNameAction(output),
                 new ExitAction(output)};
-        new StartUI(output).init(input, tracker, actions);
+        new StartUI(output).init(input, tracker, List.of(actions));
     }
 }
