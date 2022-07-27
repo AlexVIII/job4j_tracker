@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Account {
 
-        String passport;
-        String username;
-        String deposit;
+        private final String passport;
+        private final String username;
+        private final String deposit;
 
         public Account(String passport, String username, String deposit) {
                 this.passport = passport;
