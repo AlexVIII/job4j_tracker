@@ -84,19 +84,19 @@ public class AnalyseByMap {
     интерфейс Comparable). Поскольку нам нужен в итоге лучший студент - то в качестве
     результата мы возвращаем последний элемент из списка.*/
 
-        public static Label bestSubject(List<Pupil> pupils) {
-            Map<String, Integer> temp = new HashMap<>();
-            for (Pupil tempPupil : pupils) {
-                for (Subject tempSubject : tempPupil.subjects()) {
-                    temp.computeIfPresent(tempSubject.name(), (key, value) -> value + tempSubject.score());
-                    temp.putIfAbsent(tempSubject.name(), tempSubject.score());
-                }
+    public static Label bestSubject(List<Pupil> pupils) {
+        Map<String, Integer> temp = new HashMap<>();
+        for (Pupil tempPupil : pupils) {
+            for (Subject tempSubject : tempPupil.subjects()) {
+                temp.computeIfPresent(tempSubject.name(), (key, value) -> value + tempSubject.score());
+                temp.putIfAbsent(tempSubject.name(), tempSubject.score());
             }
-            List<Label> tempLabel = new ArrayList<>();
-            for (String key : temp.keySet()) {
-                tempLabel.add(new Label(key, temp.get(key)));
-            }
-            tempLabel.sort(Comparator.naturalOrder());
+        }
+        List<Label> tempLabel = new ArrayList<>();
+        for (String key : temp.keySet()) {
+            tempLabel.add(new Label(key, temp.get(key)));
+        }
+        tempLabel.sort(Comparator.naturalOrder());
         return tempLabel.get(temp.size() - 1);
     }
 
