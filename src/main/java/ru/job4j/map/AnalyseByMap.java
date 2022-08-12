@@ -42,6 +42,16 @@ public class AnalyseByMap {
     Полученный объект добавляем в список, который и возвращаем в конце метода;*/
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
+        List<Label> tempResult = new ArrayList<>();
+        Map<String, Integer> tmp = templateMap(pupils);
+        for (String key : tmp.keySet()) {
+            tempResult.add(new Label(key, tmp.get(key) / pupils.size()));
+        }
+
+        return tempResult;
+    }
+
+    public static Map<String, Integer> templateMap(List<Pupil> pupils) {
         Map<String, Integer> temp = new HashMap<>();
         for (Pupil tempPupil : pupils) {
             for (Subject tempSubject : tempPupil.subjects()) {
@@ -49,12 +59,8 @@ public class AnalyseByMap {
                 temp.putIfAbsent(tempSubject.name(), tempSubject.score());
             }
         }
-        List<Label> tempResult = new ArrayList<>();
-        for (String key : temp.keySet()) {
-            tempResult.add(new Label(key, temp.get(key) / pupils.size()));
-        }
 
-        return tempResult;
+        return temp;
     }
     /*3. Метод averageScoreBySubject() - чтобы реализовать данный метод, нам необходимо
     будет собрать временную Map<String, Integer> (в качестве реализации используем
@@ -85,19 +91,14 @@ public class AnalyseByMap {
     результата мы возвращаем последний элемент из списка.*/
 
     public static Label bestSubject(List<Pupil> pupils) {
-        Map<String, Integer> temp = new HashMap<>();
-        for (Pupil tempPupil : pupils) {
-            for (Subject tempSubject : tempPupil.subjects()) {
-                temp.computeIfPresent(tempSubject.name(), (key, value) -> value + tempSubject.score());
-                temp.putIfAbsent(tempSubject.name(), tempSubject.score());
-            }
-        }
+
         List<Label> tempLabel = new ArrayList<>();
-        for (String key : temp.keySet()) {
-            tempLabel.add(new Label(key, temp.get(key)));
+        Map<String, Integer> tmp = templateMap(pupils);
+        for (String key : tmp.keySet()) {
+            tempLabel.add(new Label(key, tmp.get(key)));
         }
         tempLabel.sort(Comparator.naturalOrder());
-        return tempLabel.get(temp.size() - 1);
+        return tempLabel.get(tmp.size() - 1);
     }
 
     /*5. Метод bestSubject() - в этом методе, также как и в методе averageScoreBySubject() ,
