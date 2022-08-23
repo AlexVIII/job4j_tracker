@@ -7,7 +7,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class JobTest {
     @Test
     public void whenComparatorByNameAndPriority() {
-        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
+        Comparator<Job> cmpNamePriority = new JobDescByName()
+                .thenComparing(new JobDescByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Impulse task", 0),
                 new Job("Fix bug", 1)
@@ -57,9 +58,9 @@ public class JobTest {
 
     @Test
     public void whenComparatorByAscNameAndPriorityAndLength() {
-        Comparator<Job> cmpNamePriority = new JobAscByName().
-                thenComparing(new JobAscByPriority()).
-                thenComparing(new JobDescByNameLn());
+        Comparator<Job> cmpNamePriority = new JobAscByName()
+                .thenComparing(new JobAscByPriority())
+                .thenComparing(new JobDescByNameLn());
         int rsl = cmpNamePriority.compare(
                 new Job("Impulse", 0),
                 new Job("Impulse", 0)
