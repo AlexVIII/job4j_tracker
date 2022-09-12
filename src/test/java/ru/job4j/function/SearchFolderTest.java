@@ -22,6 +22,7 @@ class SearchFolderTest {
         assertThat(rsl).containsAll(expected);
     }
 
+
     @Test
     public void whenFilterName() {
         List<Folder> list =  List.of(
