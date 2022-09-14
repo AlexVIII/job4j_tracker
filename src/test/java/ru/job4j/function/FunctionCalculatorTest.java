@@ -15,8 +15,8 @@ class FunctionCalculatorTest {
     void whenLinearFunctionThenLinearResults() {
         FunctionCalculator function = new FunctionCalculator();
         List<Double> result = function.diapason(5, 8, x -> 2 * x + 1);
-        List<Double> expected = Arrays.asList(11D, 13D, 15D);
-        assertThat(result).containsAll(expected);
+        List<Double> expect = Arrays.asList(11D, 13D, 15D);
+        assertThat(result).containsAll(expect);
     }
 
     @Test
