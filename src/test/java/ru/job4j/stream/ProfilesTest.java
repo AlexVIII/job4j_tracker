@@ -23,6 +23,7 @@ class ProfilesTest {
         assertThat(result).containsAll(expect);
     }
 
+
     @Test
     public void whenTestMethodCollectSortWithoutDuplicate() {
         Address first = new Address("City 1", "Street 1", 1, 2);
