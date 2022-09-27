@@ -1,6 +1,5 @@
 package ru.job4j.stream;
 
-import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class Card {
@@ -19,7 +18,6 @@ public class Card {
                 + ", value=" + value
                 + '}';
     }
-
 
     public static void main(String[] args) {
         Stream.of(Suit.values())
