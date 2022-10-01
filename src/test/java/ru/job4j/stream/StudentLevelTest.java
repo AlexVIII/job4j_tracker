@@ -15,8 +15,8 @@ class StudentLevelTest {
         input.add(new Student("Misha", 26));
         input.add(new Student("Masha", 78));
         List<Student> expect  = List.of(
-                new Student("Misha", 26),
-                new Student("Masha", 78)
+                new Student("Masha", 78),
+                new Student("Misha", 26)
         );
         assertThat(StudentLevel.levelOf(input, 20)).containsSequence(expect);
     }
@@ -36,8 +36,8 @@ class StudentLevelTest {
         input.add(new Student("Masha", 78));
         input.add(null);
         List<Student> expect  = List.of(
-                new Student("Misha", 26),
-                new Student("Masha", 78)
+                new Student("Masha", 78),
+                new Student("Misha", 26)
         );
         assertThat(StudentLevel.levelOf(input, 20)).containsSequence(expect);
     }
