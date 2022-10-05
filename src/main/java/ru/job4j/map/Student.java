@@ -42,8 +42,3 @@ public class Student {
         return Objects.hash(account);
     }
 }
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(account);
-//    }
-//}
