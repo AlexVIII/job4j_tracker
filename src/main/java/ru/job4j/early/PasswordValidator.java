@@ -11,7 +11,7 @@ public class PasswordValidator {
     public static String validate(String password) {
         List<String> word = new ArrayList<>(Arrays.asList("qwerty", "12345", "password", "admin", "user"));
         if (password.isEmpty()) {
-            throw new IllegalArgumentException("Password is used");
+            throw new IllegalArgumentException("Password is empty");
         }
         for (String s : word) {
             if (password.contains(s)) {

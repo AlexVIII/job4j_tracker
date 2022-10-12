@@ -2,31 +2,52 @@ package ru.job4j.early;
 
 import org.junit.Test;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class PasswordValidatorTest {
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void whenPasswordNotHaveDigital() {
-        PasswordValidator.validate("hJ*ggggI");
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> PasswordValidator.validate("hJ*ggggI"));
+        assertThat(exception.getMessage()).isEqualTo("the password must contain at least one digit,"
+                + "a lowercase or uppercase character, and special characters.");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void whenPasswordNotHaveUpperCharacter() {
-       PasswordValidator.validate("h1*ggggI");
+       IllegalArgumentException exception = assertThrows(
+               IllegalArgumentException.class,
+               () -> PasswordValidator.validate("h1*ggggI"));
+       assertThat(exception.getMessage()).isEqualTo("the password must contain at least one digit,"
+               + "a lowercase or uppercase character, and special characters.");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void whenPasswordNotHaveLowerCharacter() {
-        PasswordValidator.validate("1J*GGGGI");
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> PasswordValidator.validate("1J*GGGGI"));
+        assertThat(exception.getMessage()).isEqualTo("the password must contain at least one digit,"
+                + "a lowercase or uppercase character, and special characters.");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void whenPasswordIsShort() {
-        PasswordValidator.validate("1hJ*I");
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> PasswordValidator.validate("1hJ*I"));
+        assertThat(exception.getMessage()).isEqualTo("Password is short or long");
         }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void whenPasswordIsLong() {
-       PasswordValidator.validate("1hhhhhhhhhhhhhhhhhhhhhhhhhhhhhJ*I");
+       IllegalArgumentException exception = assertThrows(
+               IllegalArgumentException.class,
+               () -> PasswordValidator.validate("1hhhhhhhhhhhhhhhhhhhhhhhhhhhhhJ*I"));
+       assertThat(exception.getMessage()).isEqualTo("Password is short or long");
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -34,8 +55,11 @@ public class PasswordValidatorTest {
        PasswordValidator.validate("admin1J*GGhGI");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void whenEmpty() {
-       PasswordValidator.validate("");
+       IllegalArgumentException exception = assertThrows(
+               IllegalArgumentException.class,
+               () -> PasswordValidator.validate(""));
+       assertThat(exception.getMessage()).isEqualTo("Password is empty");
     }
 }
