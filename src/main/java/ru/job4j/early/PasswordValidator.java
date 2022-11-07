@@ -10,6 +10,12 @@ public class PasswordValidator {
 
     public static String validate(String password) {
         List<String> word = new ArrayList<>(Arrays.asList("qwerty", "12345", "password", "admin", "user"));
+        String specialSymbol = "!@#$%^&*(){}][|?/><";
+        int specialCount = 0;
+        int symbolDigital = 0;
+        int symbolLetter = 0;
+        int symbolUpper = 0;
+        int symbolLower = 0;
         if (password.isEmpty()) {
             throw new IllegalArgumentException("Password is empty");
         }
@@ -23,11 +29,31 @@ public class PasswordValidator {
         }
         char[] pass = password.toCharArray();
         for (char p : pass) {
-            if (!(isDigit(p) || isLetter(p) || isUpperCase(p) || isLowerCase(p))) {
-                throw new IllegalArgumentException("the password must contain at least one digit,"
-                        + "a lowercase or uppercase character, and special characters.");
+
+            if (!isLetterOrDigit(p)) {
+                specialCount++;
+            }
+
+            if (isLetter(p)) {
+                symbolLetter++;
+            }
+            if (isDigit(p)) {
+                symbolDigital++;
+            }
+            if (isUpperCase(p)) {
+                symbolUpper++;
+            }
+            if (isLowerCase(p)) {
+                symbolLower++;
             }
         }
-        return password;
+
+        if ((symbolLetter == 0) || (symbolDigital == 0) || (symbolLower == 0) || (symbolUpper == 0) || (specialCount == 0)) {
+
+            throw new IllegalArgumentException("the password must contain at least one digit,"
+                    + "a lowercase or uppercase character, and special characters.");
+        }
+            return password;
     }
+
 }

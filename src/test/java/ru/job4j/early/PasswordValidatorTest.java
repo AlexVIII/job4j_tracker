@@ -20,7 +20,7 @@ public class PasswordValidatorTest {
     public void whenPasswordNotHaveUpperCharacter() {
        IllegalArgumentException exception = assertThrows(
                IllegalArgumentException.class,
-               () -> PasswordValidator.validate("h1*ggggI"));
+               () -> PasswordValidator.validate("h1*ggggi"));
        assertThat(exception.getMessage()).isEqualTo("the password must contain at least one digit,"
                + "a lowercase or uppercase character, and special characters.");
     }
@@ -61,5 +61,12 @@ public class PasswordValidatorTest {
                IllegalArgumentException.class,
                () -> PasswordValidator.validate(""));
        assertThat(exception.getMessage()).isEqualTo("Password is empty");
+    }
+
+    @Test
+    public void whenPasswordValid() {
+        String result = PasswordValidator.validate("admfffi1J*G10");
+        String expect = "admfffi1J*G10";
+        assertThat(result).isEqualTo(expect);
     }
 }
